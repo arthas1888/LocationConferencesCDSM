@@ -1,0 +1,21 @@
+{# template.html #}
+<html>
+  <head>
+    {{ form.media }}
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+    {% if messages %}
+         {% if messages %}
+            {% for message in messages %}
+                <h3>{{message}}</h3>
+            {% endfor %}
+        {% endif %}
+    {% endif %}
+    <form method="post" action="">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <p><input class="btn btn-primary" type="submit" value="Submit"></p>
+    </form>
+  </body>
+</html>
